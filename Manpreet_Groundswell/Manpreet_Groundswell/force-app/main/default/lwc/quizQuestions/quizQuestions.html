@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-box slds-theme_default">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <template for:each={questiondata} for:item="que">
+           
+                <tr key={que.Id}>
+                    <th class="" scope="col">
+                        Question:
+                      </th>
+                      </tr>
+                      <tr key={que.Id}>
+                      <td>{que.Question__c}</td> 
+                      </tr>  
+                      <tr key={que.Id}><td>A: &nbsp;{que.Answer_A__c}</td></tr>
+                      <tr key={que.Id}><td>B: &nbsp;{que.Answer_B__c}</td></tr>
+                      <tr key={que.Id}><td>C: &nbsp;{que.Answer_C__c}</td></tr>
+                      <tr key={que.Id}><td>D: &nbsp;{que.Answer_D__c}</td></tr>
+                                      
+        </template>
+        </table>
+    </div>   
+</template>

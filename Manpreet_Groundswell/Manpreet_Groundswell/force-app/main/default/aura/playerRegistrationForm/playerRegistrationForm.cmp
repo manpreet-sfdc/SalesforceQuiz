@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:availableForFlowScreens,lightning:availableForFlowActions" 
+                access="global" controller ="contactPortalUserController">
+    
+    <aura:attribute name="FirstName" type="String" default="" />
+    <aura:attribute name="LastName" type="String" default="" />
+    <aura:attribute name="Mobile" type="Integer" default="" />
+    <aura:attribute name="Email" type="String" default="" />
+
+    <br/><br/>
+    <form class="slds-form_stacked">
+    <lightning:input aura:id="inputdetailform" label="First Name"  value="{!v.FirstName}" />
+    <br/>
+    <lightning:input label="Last Name" aura:id="inputdetailform"   value="{!v.LastName}" />
+    <br/>
+    <lightning:input label="Mobile" aura:id="inputdetailform"  type="tel" value="{!v.Mobile}"></lightning:input>
+    <br/>
+    <lightning:input label="Email" aura:id="inputdetailform"  type="email" name="email" value="{!v.Email}" />
+    <br/>
+    
+    <lightning:button label="Sign Up!" onclick="{!c.submitAction}"></lightning:button>
+    </form>
+    
+</aura:component>

@@ -1,0 +1,32 @@
+<template>
+    <div class="slds-box slds-theme_default">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+            <thead>
+                <tr>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Paticipant Name">First Name</div>
+                      </th>
+                      <th class="" scope="col">
+                        <div class="slds-truncate" title="Participant Game Id">Game Id</div>
+                      </th>
+                      <th class="" scope="col">
+                          <div class="slds-truncate" title="Paticipant Phone">Email</div>
+                        </th>
+                        <th class="" scope="col">
+                          <div class="slds-truncate" title="Paticipant Email">Phone</div>
+                        </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={participants} for:item="part">
+                    <tr key={part.Id}>
+                        <td>{part.FirstName}</td>
+                        <td>{part.GameId__c}</td>
+                        <td>{part.Email}</td>
+                        <td>{part.Phone}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>   
+</template>

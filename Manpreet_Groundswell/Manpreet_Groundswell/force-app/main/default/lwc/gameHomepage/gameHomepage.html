@@ -1,0 +1,51 @@
+<template>
+    <template if:true={error}>
+        <div
+            class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error slds-m-bottom_small"
+            role="alert"
+        >
+            <span class="slds-assistive-text">error</span>
+            <h2>{error}</h2>
+        </div>
+    </template>
+    
+    <div class="slds-card">
+
+            <div class="slds-card__header slds-grid">
+                <div class="slds-col slds-size_6-of-12 slds-align-middle">
+                    <!-- Reset button -->
+                    <lightning-button
+                        label="Reset"
+                        onclick={handleResetClick}
+                    ></lightning-button>
+                </div>
+                <div   class="slds-col slds-size_6-of-12 slds-align-middle slds-text-align_right" >
+                    <!-- Next phase button -->
+                    <lightning-button
+                    
+                    label={clickedButtonLabel}
+                        variant="brand"
+                        onclick={handleNextPhaseClick}
+                    ></lightning-button>
+                </div>
+            </div>
+        
+            <template if:true={gamerule}>
+        <c-game-Rules></c-game-Rules>  
+    </template>
+
+    <template if:true = {showParticiapants}>
+        <c-show-Particpants></c-show-Particpants>
+    </template>
+
+    <template if:true = {questionPhase}>
+        <c-quiz-Questions onsendquecounter ={handlesendQueCounter}></c-quiz-Questions>
+    </template>
+    <template if:true = {showQuizWinner}>
+        <c-show-Quiz-Winner></c-show-Quiz-Winner>
+    </template>
+    
+
+    </div>
+
+</template>
